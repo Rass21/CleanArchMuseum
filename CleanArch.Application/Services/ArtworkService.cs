@@ -11,7 +11,7 @@ namespace CleanArch.Application.Services
 {
     public class ArtworkService : IArtworkService
     {
-        public IArtworkRepository _repo;
+        private IArtworkRepository _repo;
 
         public ArtworkService(IArtworkRepository repo)
         {
@@ -19,7 +19,10 @@ namespace CleanArch.Application.Services
         }
         public ArtworkViewModel GetArtworks()
         {
-            throw new NotImplementedException();
+            return new ArtworkViewModel
+            {
+                Artworks = _repo.GetArtworks()
+            };
         }
     }
 }
