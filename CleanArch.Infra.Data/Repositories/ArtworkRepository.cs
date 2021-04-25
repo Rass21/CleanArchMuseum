@@ -11,7 +11,7 @@ namespace CleanArch.Infra.Data.Repositories
 {
     public class ArtworkRepository : IArtworkRepository
     {
-        private MuseumDbContext _context;
+        private readonly MuseumDbContext _context;
         public ArtworkRepository(MuseumDbContext context)
         {
             _context = context;

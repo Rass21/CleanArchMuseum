@@ -1,4 +1,5 @@
 ﻿using CleanArch.Application.Interfaces;
+using CleanArch.Application.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -17,7 +18,9 @@ namespace CleanArch.MVC.Controllers
         }
         public IActionResult Index()
         {
-            return View();
+            ArtworkViewModel model = _artworkService.GetArtworks();
+
+            return View(model);
         }
     }
 }
