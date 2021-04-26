@@ -1,0 +1,28 @@
+﻿@model CleanArch.Application.ViewModels.ArtworkViewModel 
+
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Gallery</h1>
+
+<table id="artwork" class="table table-bordered table-hover">
+    <thead>
+        <tr class="">
+            <th>Name</th>
+            <th>Artist</th>
+            <th>Year</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var artwork in Model.Artworks)
+        {
+            <tr style="height: 60px;">
+                <td>@artwork.Name</td>
+                <td>@artwork.Artist</td>
+                <td>@artwork.Year</td>
+            </tr>
+        }
+    </tbody>
+</table>
